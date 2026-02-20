@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="Project Logo" width="200"/>
+</p>
+
 # Multicore Parallelism & Power Analysis on Raspberry Pi 3
 
 **Course:** Parallélisme & Architecture multicores — TP 1
