@@ -3,7 +3,7 @@
 **Course:** Parallélisme & Architecture multicores — TP 1
 **Date:** 2021/2022
 **Hardware:** Raspberry Pi 3 B+ — Quad-core ARM Cortex-A53 @ 1.4 GHz
-**Authors:** Selina CHEGGOUR, Thérèse MBOCK
+**Author:** Selina CHEGGOUR
 **Supervisor:** Cecile BELLEUDY
 
 ---
