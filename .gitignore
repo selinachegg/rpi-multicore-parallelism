@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary image outputs produced by the scripts
+lena_gris.jpg
+left.jpg
+right.jpg
+lu.jpg
+ru.jpg
+ll.jpg
+rl.jpg
+lu1.jpg
+ru1.jpg
+ll1.jpg
+rl1.jpg
+Nimg1.jpg
+Nimg2.jpg
+Nimg3.jpg
+Nimg4.jpg
+image_gris.jpg
+image_gris1.jpg
+
+# OS
+.DS_Store
+Thumbs.db
