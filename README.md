@@ -4,9 +4,9 @@
 
 # Multicore Parallelism & Power Analysis on Raspberry Pi 3
 
-**Course:** Parallélisme & Architecture multicores — TP 1
+**Course:** Parallélisme & Architecture multicores, TP 1
 **Date:** 2021/2022
-**Hardware:** Raspberry Pi 3 B+ — Quad-core ARM Cortex-A53 @ 1.4 GHz
+**Hardware:** Raspberry Pi 3 B+, Quad-core ARM Cortex-A53 @ 1.4 GHz
 **Author:** Selina CHEGGOUR
 **GitHub:** [@selinachegg](https://github.com/selinachegg)
 **Supervisor:** Cecile BELLEUDY
@@ -17,17 +17,17 @@
 
 This lab studies the real impact of core-level parallelism on both **execution speed** and **energy consumption** on an embedded multicore board (Raspberry Pi 3 B+). Three interconnected experiments are carried out:
 
-1. **Grayscale image filtering** — same algorithm applied with 0, 2, and 4 cores in parallel
-2. **Video frame edge detection** — car detection use case for surveillance, benchmarked across CPU governors
-3. **Power consumption modeling** — 3D linear regression fitted from real RPi measurements, then used in ILP optimization and task scheduling
+1. **Grayscale image filtering**: same algorithm applied with 0, 2, and 4 cores in parallel
+2. **Video frame edge detection**: car detection use case for surveillance, benchmarked across CPU governors
+3. **Power consumption modeling**: 3D linear regression fitted from real RPi measurements, then used in ILP optimization and task scheduling
 
 ---
 
-## Hardware — Raspberry Pi 3 B+
+## Hardware: Raspberry Pi 3 B+
 
 | Property | Value |
 |----------|-------|
-| Processor | Broadcom BCM2837B0 — ARM Cortex-A53 64-bit |
+| Processor | Broadcom BCM2837B0, ARM Cortex-A53 64-bit |
 | Cores | 4 |
 | Frequency range | 0.6 GHz (min) → 1.4 GHz (max) |
 | Voltage | 5V |
@@ -35,7 +35,7 @@ This lab studies the real impact of core-level parallelism on both **execution s
 
 ---
 
-## Experiment 1 — Grayscale Filter (`01_grayscale_filter/`)
+## Experiment 1: Grayscale Filter (`01_grayscale_filter/`)
 
 The grayscale formula applied pixel by pixel: `gray = (R + G + B) / 3`
 
@@ -51,9 +51,9 @@ The image (lena.jpg) is split into N equal parts, each processed by a separate c
 
 ---
 
-## Experiment 2 — Edge Detection (`02_edge_detection/`)
+## Experiment 2: Edge Detection (`02_edge_detection/`)
 
-**Use case:** Video surveillance — detect a car passing in front of a camera.
+**Use case:** Video surveillance: detect a car passing in front of a camera.
 
 **Method:**
 1. Convert both the reference frame and the new frame to grayscale
@@ -71,11 +71,11 @@ The algorithm runs with parallelism level 4 (one core per quadrant pair), benchm
 | **Performance** | **29.70 s** | **0.62 A** | **92.07 J** ← best overall |
 | Conservative | 30.26 s | 0.84 A | 127.09 J |
 
-> For edge detection, Performance governor is both the fastest and most energy-efficient — the opposite of intuition.
+> For edge detection, Performance governor is both the fastest and most energy-efficient, the opposite of intuition.
 
 ---
 
-## Experiment 3 — Power Modeling (`03_power_modeling/`)
+## Experiment 3: Power Modeling (`03_power_modeling/`)
 
 See [`03_power_modeling/POWER_MODELING.md`](03_power_modeling/POWER_MODELING.md) for full explanation.
 
@@ -97,18 +97,18 @@ pip install -r requirements.txt
 
 ## Usage
 
-> Each script uses relative file paths — always run from inside its own folder.
+> Each script uses relative file paths: always run from inside its own folder.
 
 ```bash
-# Grayscale filter — sequential
+# Grayscale filter: sequential
 cd 01_grayscale_filter/sequential
 python Filtre_gris_sans_parallelisme.py
 
-# Grayscale filter — 2 cores
+# Grayscale filter: 2 cores
 cd 01_grayscale_filter/parallel_x2
 python Filtre_gris_avec_parallelisme_taux2.py
 
-# Grayscale filter — 4 cores
+# Grayscale filter: 4 cores
 cd 01_grayscale_filter/parallel_x4
 python Filtre_gris_avec_parallelisme_niveau4.py
 
@@ -125,4 +125,4 @@ python Proba_combinatoire2.py
 python iteration.py
 ```
 
-> The multiprocessing scripts require `if __name__ == '__main__':` — already in place for Windows compatibility.
+> The multiprocessing scripts require `if __name__ == '__main__':`, already in place for Windows compatibility.
